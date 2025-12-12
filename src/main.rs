@@ -33,7 +33,69 @@ const HOURS_OF_DEPOSITING: f64 = 0.25;
 const SAFEBAG_COSTS: f64 = 10.0;
 
 #[component]
-fn App() -> impl IntoView {
+fn CollapsibleSection(
+    title: &'static str,
+    #[prop(default = false)] default_open: bool,
+    children: Children,
+) -> impl IntoView {
+    let (is_open, set_is_open) = signal(default_open);
+
+    // Store the children in a variable so we can use it in the view
+    let children_view = children();
+
+    view! {
+        <div class="collapsible-section">
+            <div
+                class="section-header"
+                on:click=move |_| set_is_open.set(!is_open.get())
+            >
+                <h2>{title}</h2>
+                <span class="toggle-icon">
+                    {move || if is_open.get() { "▼" } else { "▶" }}
+                </span>
+            </div>
+            <div class="section-content" style:display=move || if is_open.get() { "block" } else { "none" }>
+                {children_view}
+            </div>
+        </div>
+    }
+}
+
+#[component]
+fn TopSection() -> impl IntoView {
+    view! {
+        <div class="text-content">
+            <h3>"Why should you or should not accept card payments?"</h3>
+            <p>
+                "Lorem ispum"
+            </p>
+            <p>
+                "Still needs info"
+            </p>
+            <p>
+                "Whoppa"
+            </p>
+        </div>
+    }
+}
+
+#[component]
+fn MiddleSection() -> impl IntoView {
+    view! {
+        <div class="text-content">
+            <h3>"What are the policies and regulations around cash? "</h3>
+            <p>
+                "Cash is the only legal tender"
+            </p>
+            <p>
+                "By agreeing to an informal contract, i.e. through a sign at the front door, before the customer starts shopping, you can be a card only shop."
+            </p>
+        </div>
+    }
+}
+
+#[component]
+fn CalculatorSection() -> impl IntoView {
     let (monthly_revenue, set_monthly_revenue) = signal(3000.0);
     let (cash_register_count, set_cash_register_count) = signal(30);
     let (salary_counting, set_salary_counting) = signal(15.0);
@@ -57,6 +119,165 @@ fn App() -> impl IntoView {
         }
     });
 
+    view! {
+        <div class="calculator-content">
+            <div class="left-panel">
+                <div class="input-section">
+                    <h3>"Revenue"</h3>
+                    <div class="input-group">
+                        <label>"Monthly Revenue (€)"</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            value={move || monthly_revenue.get()}
+                            on:input=move |ev| {
+                                if let Ok(value) = event_target_value(&ev).parse::<f64>() {
+                                    set_monthly_revenue.set(value);
+                                }
+                            }
+                        />
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <h3>"Cash Management"</h3>
+                    <div class="input-group">
+                        <label>"Cash Register Counted per Month"</label>
+                        <input
+                            type="number"
+                            value={move || cash_register_count.get()}
+                            on:input=move |ev| {
+                                if let Ok(value) = event_target_value(&ev).parse::<i32>() {
+                                    set_cash_register_count.set(value);
+                                }
+                            }
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <label>"Salary of Person Counting Cash (€/hour)"</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            value={move || salary_counting.get()}
+                            on:input=move |ev| {
+                                if let Ok(value) = event_target_value(&ev).parse::<f64>() {
+                                    set_salary_counting.set(value);
+                                }
+                            }
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <label>"Bank Trips per Month"</label>
+                        <input
+                            type="number"
+                            value={move || bank_trips.get()}
+                            on:input=move |ev| {
+                                if let Ok(value) = event_target_value(&ev).parse::<i32>() {
+                                    set_bank_trips.set(value);
+                                }
+                            }
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <label>"Salary of Person Going to Bank (€/hour)"</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            value={move || salary_bank_person.get()}
+                            on:input=move |ev| {
+                                if let Ok(value) = event_target_value(&ev).parse::<f64>() {
+                                    set_salary_bank_person.set(value);
+                                }
+                            }
+                        />
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <h3>"Transactions"</h3>
+                    <div class="input-group">
+                        <label>"Cash Transactions per Month"</label>
+                        <input
+                            type="number"
+                            value={move || cash_transactions.get()}
+                            on:input=move |ev| {
+                                if let Ok(value) = event_target_value(&ev).parse::<i32>() {
+                                    set_cash_transactions.set(value);
+                                }
+                            }
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <label>"Card Transactions per Month"</label>
+                        <input
+                            type="number"
+                            value={move || card_transactions.get()}
+                            on:input=move |ev| {
+                                if let Ok(value) = event_target_value(&ev).parse::<i32>() {
+                                    set_card_transactions.set(value);
+                                }
+                            }
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="chart-section">
+                    <h3>"Provider Cost Comparison"</h3>
+                    <div class="chart-container">
+                        <canvas
+                            node_ref=canvas_ref
+                            width="900"
+                            height="500"
+                        />
+                        <button
+                            class="legend-btn"
+                            on:click=move |_| set_show_legend.set(!show_legend.get())
+                        >
+                            "Legend"
+                        </button>
+
+                        {move || show_legend.get().then(|| view! {
+                            <div class="legend-popup">
+                                <h4>"Legend"</h4>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: blue;"></div>
+                                    <span>"SumUp No Commitment (up to 3.5k)"</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: red;"></div>
+                                    <span>"SumUp Plus"</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: green;"></div>
+                                    <span>"Unzer Go"</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: black;"></div>
+                                    <span>"Cash"</span>
+                                </div>
+                                <button
+                                    class="close-btn"
+                                    on:click=move |_| set_show_legend.set(false)
+                                >
+                                    "Close"
+                                </button>
+                            </div>
+                        })}
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+#[component]
+fn App() -> impl IntoView {
     view! {
         <style>
             "
@@ -95,10 +316,87 @@ fn App() -> impl IntoView {
                 margin: 0;
             }
 
-            .content {
+            .collapsible-section {
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .collapsible-section:last-child {
+                border-bottom: none;
+            }
+
+            .section-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 40px;
+                background: #f8f9fa;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .section-header:hover {
+                background: #e9ecef;
+            }
+
+            .section-header h2 {
+                color: #005a66;
+                font-size: 1.5em;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            .toggle-icon {
+                color: #005a66;
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+
+            .section-content {
+                padding: 30px 40px;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .text-content {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .text-content h3 {
+                color: #005a66;
+                font-size: 1.3em;
+                margin-bottom: 15px;
+            }
+
+            .text-content p {
+                color: #333;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .text-content ol {
+                margin-left: 20px;
+                color: #333;
+                line-height: 1.8;
+            }
+
+            .text-content li {
+                margin-bottom: 10px;
+            }
+
+            .calculator-content {
                 display: flex;
                 gap: 20px;
-                padding: 30px;
             }
 
             .left-panel {
@@ -120,7 +418,7 @@ fn App() -> impl IntoView {
                 border: 1px solid #e0e0e0;
             }
 
-            .input-section h2 {
+            .input-section h3 {
                 color: #005a66;
                 font-size: 1.2em;
                 margin-bottom: 20px;
@@ -167,7 +465,7 @@ fn App() -> impl IntoView {
                 height: 100%;
             }
 
-            .chart-section h2 {
+            .chart-section h3 {
                 color: #005a66;
                 font-size: 1.5em;
                 margin-bottom: 20px;
@@ -221,7 +519,7 @@ fn App() -> impl IntoView {
                 min-width: 280px;
             }
 
-            .legend-popup h3 {
+            .legend-popup h4 {
                 margin: 0 0 15px 0;
                 color: #005a66;
                 font-size: 1.1em;
@@ -260,7 +558,7 @@ fn App() -> impl IntoView {
             }
 
             @media (max-width: 1024px) {
-                .content {
+                .calculator-content {
                     flex-direction: column;
                 }
 
@@ -279,7 +577,15 @@ fn App() -> impl IntoView {
                     font-size: 1.5em;
                 }
 
-                .content {
+                .section-header {
+                    padding: 15px 20px;
+                }
+
+                .section-header h2 {
+                    font-size: 1.2em;
+                }
+
+                .section-content {
                     padding: 20px;
                 }
 
@@ -292,162 +598,23 @@ fn App() -> impl IntoView {
 
         <div class="container">
             <div class="header">
-                <h1>"Cash Management Calculator"</h1>
+                <h1>"Compare cash and card payment options."</h1>
+                <p> "Deciding if offering card payments is worth it to your business, is a difficult task."</p>
+                <p>"With the many options for payment processors, it can be daunting task to go through all of them."</p>
+                <p>"With this website we try to make it easier for you." </p>
             </div>
 
-            <div class="content">
-                <div class="left-panel">
-                    <div class="input-section">
-                        <h2>"Revenue"</h2>
-                        <div class="input-group">
-                            <label>"Monthly Revenue (€)"</label>
-                            <input
-                                type="number"
-                                step="0.01"
-                                value={move || monthly_revenue.get()}
-                                on:input=move |ev| {
-                                    if let Ok(value) = event_target_value(&ev).parse::<f64>() {
-                                        set_monthly_revenue.set(value);
-                                    }
-                                }
-                            />
-                        </div>
-                    </div>
+            <CollapsibleSection title="Awareness" default_open=false>
+                <TopSection />
+            </CollapsibleSection>
 
-                    <div class="input-section">
-                        <h2>"Cash Management"</h2>
-                        <div class="input-group">
-                            <label>"Cash Register Counted per Month"</label>
-                            <input
-                                type="number"
-                                value={move || cash_register_count.get()}
-                                on:input=move |ev| {
-                                    if let Ok(value) = event_target_value(&ev).parse::<i32>() {
-                                        set_cash_register_count.set(value);
-                                    }
-                                }
-                            />
-                        </div>
+            <CollapsibleSection title="Regulation">
+                <MiddleSection />
+            </CollapsibleSection>
 
-                        <div class="input-group">
-                            <label>"Salary of Person Counting Cash (€/hour)"</label>
-                            <input
-                                type="number"
-                                step="0.01"
-                                value={move || salary_counting.get()}
-                                on:input=move |ev| {
-                                    if let Ok(value) = event_target_value(&ev).parse::<f64>() {
-                                        set_salary_counting.set(value);
-                                    }
-                                }
-                            />
-                        </div>
-
-                        <div class="input-group">
-                            <label>"Bank Trips per Month"</label>
-                            <input
-                                type="number"
-                                value={move || bank_trips.get()}
-                                on:input=move |ev| {
-                                    if let Ok(value) = event_target_value(&ev).parse::<i32>() {
-                                        set_bank_trips.set(value);
-                                    }
-                                }
-                            />
-                        </div>
-
-                        <div class="input-group">
-                            <label>"Salary of Person Going to Bank (€/hour)"</label>
-                            <input
-                                type="number"
-                                step="0.01"
-                                value={move || salary_bank_person.get()}
-                                on:input=move |ev| {
-                                    if let Ok(value) = event_target_value(&ev).parse::<f64>() {
-                                        set_salary_bank_person.set(value);
-                                    }
-                                }
-                            />
-                        </div>
-                    </div>
-
-                    <div class="input-section">
-                        <h2>"Transactions"</h2>
-                        <div class="input-group">
-                            <label>"Cash Transactions per Month"</label>
-                            <input
-                                type="number"
-                                value={move || cash_transactions.get()}
-                                on:input=move |ev| {
-                                    if let Ok(value) = event_target_value(&ev).parse::<i32>() {
-                                        set_cash_transactions.set(value);
-                                    }
-                                }
-                            />
-                        </div>
-
-                        <div class="input-group">
-                            <label>"Card Transactions per Month"</label>
-                            <input
-                                type="number"
-                                value={move || card_transactions.get()}
-                                on:input=move |ev| {
-                                    if let Ok(value) = event_target_value(&ev).parse::<i32>() {
-                                        set_card_transactions.set(value);
-                                    }
-                                }
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="right-panel">
-                    <div class="chart-section">
-                        <h2>"Provider Cost Comparison"</h2>
-                        <div class="chart-container">
-                            <canvas
-                                node_ref=canvas_ref
-                                width="900"
-                                height="500"
-                            />
-                            <button
-                                class="legend-btn"
-                                on:click=move |_| set_show_legend.set(!show_legend.get())
-                            >
-                                "Legend"
-                            </button>
-
-                            {move || show_legend.get().then(|| view! {
-                                <div class="legend-popup">
-                                    <h3>"Legend"</h3>
-                                    <div class="legend-item">
-                                        <div class="legend-line" style="background: blue;"></div>
-                                        <span>"SumUp No Commitment (up to 3.5k)"</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <div class="legend-line" style="background: red;"></div>
-                                        <span>"SumUp Plus"</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <div class="legend-line" style="background: green;"></div>
-                                        <span>"Unzer Go"</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <div class="legend-line" style="background: black;"></div>
-                                        <span>"Cash"</span>
-                                    </div>
-                                    <button
-                                        class="close-btn"
-                                        on:click=move |_| set_show_legend.set(false)
-                                    >
-                                        "Close"
-                                    </button>
-                                </div>
-                            })}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <CollapsibleSection title="Comparison Calculator" default_open=false>
+                <CalculatorSection />
+            </CollapsibleSection>
         </div>
     }
 }
