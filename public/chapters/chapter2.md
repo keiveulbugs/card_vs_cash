@@ -47,3 +47,78 @@ Source: ECB, Study on. The Payment Attitudes of Consumers in the Euro Area (SPAC
 
 Overall trend:
 Digital payment infrastructure exists and is growing, but cash remains deeply embedded in daily German payment culture. 
+
+
+---
+# Why is Cash still so popular?
+
+: Research and interview conducted in Munich show that the persistence of cash is driven by a mix of cultural, economic, and practical factors. 
+
+Cultural and historical trust in cash 
+-	Cash is perceived as fast, reliable, and privacy-preserving. 
+-	Historical experiences with inflation and surveillance has shaped strong preferences for financial anonymity. 
+-	Privacy concerns make many consumers hesitant about data sharing in digital payments. 
+
+Economic reasons for merchants 
+-	Small businesses face transaction fees for card payments that cut into thin margins. 
+-	Most interviewed shops accept card payments only above a minimum amount to avoid high per-transaction costs. 
+-	Several shops reported that card fees average around €0.20 per transaction, which is costly for small-value items. 
+-	Many merchants stated that cash is simpler to manage and avoids administrative overhead. 
+-	Note: further on this website, you can observe that these costs are overstated, and that cash is actually more expensive to use. 
+
+Operational convenience 
+-	Cash is immediate, does not require terminals, and avoids technical failures. 
+-	In crowded cafés or markets, card terminals are seen as slowing down service, however this can be challenged by saying that cash is time consuming as well (counting, etc.). 
+
+
+
+---
+# Cash vs. Digital Payments – Pros and Cons 
+
+
+| Payment Method     | Advantages | Disadvantages |
+|--------------------|------------|---------------|
+| **Cash Payments**  | - Full privacy and anonymity<br>- Immediate settlement – no intermediaries<br>- No transaction fees for merchants<br>- Familiar and trusted by all age groups<br>- Works without electricity or network | - Manual handling and counting time<br>- Risk of theft or loss<br>- Difficult to split bills digitally<br>- No transaction traceability<br>- Lost sales when customers lack cash |
+| **Digital Payments** | - Fast and convenient for customers<br>- Easy bill splitting and online integration<br>- Reduced physical cash handling<br>- Better accounting and transparency<br>- Enables e-commerce and mobile payments | - Transaction fees for merchants<br>- Dependence on terminals and connectivity<br>- Data sharing and privacy concerns<br>- Technical failures can block payments<br>- Could be perceived as less “secure” |
+
+
+Cash Payments 
+Advantages 
+-	Full privacy and anonymity 
+-	Immediate settlement – no intermediaries 
+-	No transaction fees for merchants 
+-	Familiar and trusted by all age groups 
+-	Works without electricity or network 
+
+Disadvantages
+-	Manual handling and counting time 
+-	Risk of theft or loss
+-	Difficult to split bills digitally 
+-	No transaction traceability 
+-	Lost sales when customers lack cash 
+
+Digital Payments 
+Advantages 
+-	Fast and convenient for customers 
+-	Easy bill splitting and online integration 
+-	Reduced physical cash handling 
+-	Better accounting and transparency 
+-	Enables e-commerce and mobile payments 
+
+Disadvantages 
+-	Transaction fees for merchants
+-	Dependence on terminals and connectivity 
+-	Data sharing and privacy concerns 
+-	Technical failures can block payments 
+-	Could be perceived as less “secure” 
+
+These trade-offs explain why many German shops adopt hybrid solutions (accepting both cash and card), but imposing minimum card amounts. 
+
+Title: What doe Munich shop owners say? 
+Our interviews with 11 local businesses revealed: 
+-	Most shops accept cash and card, but only above a minimum purchase threshold. 
+-	Transaction fees are the main barrier to wider card acceptance.
+-	Many customers simply buy extra items to reach the card minimum.
+-	Some shops have removed limits, responding to younger customers’ preferences for card payments. 
+
+Overall, merchants describe the current system as “working fine”, reducing urgency to change.  
