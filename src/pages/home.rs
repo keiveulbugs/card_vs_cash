@@ -56,7 +56,7 @@ pub fn Home() -> impl IntoView {
                         </li>
                         <li>
                             <a href="/chapter-3" class="nav-link">
-                                "Why Cash"
+                                "Misconceptions"
                             </a>
                         </li>
                         <li>
@@ -81,13 +81,11 @@ pub fn Home() -> impl IntoView {
                         </li>
                     </ul>
                 </div>
-            </nav>
-            <main class="main-content">
+            </nav> <main class="main-content">
                 <article class="chapter-card" id="chapter-1">
                     <MarkdownContent content=get_chapter_content(1).to_string()/>
                 </article>
-            </main>
-            <footer class="footer">
+            </main> <footer class="footer">
                 <p>"Explore the evolving world of payments"</p>
             </footer>
         </ErrorBoundary>

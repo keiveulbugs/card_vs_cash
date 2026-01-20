@@ -52,23 +52,116 @@ Digital payment infrastructure exists and is growing, but cash remains deeply em
 ---
 # Why is Cash still so popular?
 
-: Research and interview conducted in Munich show that the persistence of cash is driven by a mix of cultural, economic, and practical factors. 
+Research and interview conducted in Munich show that the persistence of cash is driven by a mix of cultural, economic, and practical factors. 
 
-Cultural and historical trust in cash 
--	Cash is perceived as fast, reliable, and privacy-preserving. 
--	Historical experiences with inflation and surveillance has shaped strong preferences for financial anonymity. 
--	Privacy concerns make many consumers hesitant about data sharing in digital payments. 
+<div style="display: flex; justify-content: space-around; align-items: flex-end; font-family: Arial, sans-serif; margin-top: 40px;">
 
-Economic reasons for merchants 
--	Small businesses face transaction fees for card payments that cut into thin margins. 
--	Most interviewed shops accept card payments only above a minimum amount to avoid high per-transaction costs. 
--	Several shops reported that card fees average around €0.20 per transaction, which is costly for small-value items. 
--	Many merchants stated that cash is simpler to manage and avoids administrative overhead. 
--	Note: further on this website, you can observe that these costs are overstated, and that cash is actually more expensive to use. 
+  <!-- Shop 1 -->
+  <div style="text-align: center; width: 22%;">
+    <div style="background: #f2f4f7; border: 1px solid #d0d5dd; border-radius: 12px; padding: 12px; position: relative; margin-bottom: 15px;">
+      Most shops accept cash and card, but only above a minimum purchase threshold.
+      <div style="position: absolute; bottom: -10px; left: 50%; margin-left: -10px; width: 0; height: 0;
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-top: 10px solid #f2f4f7;"></div>
+    </div>
+    <div style="font-size: 40px;">🏪</div>
+    <div style="font-weight: bold;"></div>
+  </div>
 
-Operational convenience 
--	Cash is immediate, does not require terminals, and avoids technical failures. 
--	In crowded cafés or markets, card terminals are seen as slowing down service, however this can be challenged by saying that cash is time consuming as well (counting, etc.). 
+  <!-- Shop 2 -->
+  <div style="text-align: center; width: 22%;">
+    <div style="background: #f2f4f7; border: 1px solid #d0d5dd; border-radius: 12px; padding: 12px; position: relative; margin-bottom: 15px;">
+      Transaction fees are the main barrier to wider card acceptance.
+      <div style="position: absolute; bottom: -10px; left: 50%; margin-left: -10px; width: 0; height: 0;
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-top: 10px solid #f2f4f7;"></div>
+    </div>
+    <div style="font-size: 40px;">🏪</div>
+    
+  </div>
+
+  <!-- Shop 3 -->
+  <div style="text-align: center; width: 22%;">
+    <div style="background: #f2f4f7; border: 1px solid #d0d5dd; border-radius: 12px; padding: 12px; position: relative; margin-bottom: 15px;">
+      Many customers simply buy extra items to reach the card minimum.
+      <div style="position: absolute; bottom: -10px; left: 50%; margin-left: -10px; width: 0; height: 0;
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-top: 10px solid #f2f4f7;"></div>
+    </div>
+    <div style="font-size: 40px;">🏪</div>
+    
+  </div>
+
+  <!-- Shop 4 -->
+  <div style="text-align: center; width: 22%;">
+    <div style="background: #f2f4f7; border: 1px solid #d0d5dd; border-radius: 12px; padding: 12px; position: relative; margin-bottom: 15px;">
+      Some shops have removed limits, responding to younger customers’ preferences for card payments.
+      <div style="position: absolute; bottom: -10px; left: 50%; margin-left: -10px; width: 0; height: 0;
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-top: 10px solid #f2f4f7;"></div>
+    </div>
+    <div style="font-size: 40px;">🏪</div>
+    
+  </div>
+
+</div>
+
+<br><br><br>
+
+
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <thead>
+    <tr style="background-color: #f2f4f7;">
+      <th style="border: 1px solid #d0d5dd; padding: 12px; text-align: left;">Category</th>
+      <th style="border: 1px solid #d0d5dd; padding: 12px; text-align: left;">Key Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <strong>Cultural and Historical Trust in Cash</strong>
+      </td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <ul style="margin: 0; padding-left: 18px;">
+          <li>Cash is perceived as fast, reliable, and privacy-preserving.</li>
+          <li>Historical experiences with inflation and surveillance have shaped strong preferences for financial anonymity.</li>
+          <li>Privacy concerns make many consumers hesitant about data sharing in digital payments.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <strong>Economic Reasons for Merchants</strong>
+      </td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <ul style="margin: 0; padding-left: 18px;">
+          <li>Small businesses face transaction fees for card payments that cut into thin margins.</li>
+          <li>Many shops accept card payments only above a minimum amount to avoid high per-transaction costs.</li>
+          <li>Several shops reported average card fees of around €0.20 per transaction, which is costly for low-value items.</li>
+          <li>Merchants often state that cash is simpler to manage and avoids administrative overhead.</li>
+          <li><em>Note:</em> Elsewhere on this website, it is shown that these costs may be overstated and that cash can, in fact, be more expensive to use.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <strong>Operational Convenience</strong>
+      </td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <ul style="margin: 0; padding-left: 18px;">
+          <li>Cash provides immediate settlement and does not require payment terminals.</li>
+          <li>It avoids technical failures related to connectivity or hardware.</li>
+          <li>In crowded cafés or markets, card terminals are perceived as slowing service, although this can be challenged given the time required for cash handling and counting.</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 
@@ -76,49 +169,56 @@ Operational convenience
 # Cash vs. Digital Payments – Pros and Cons 
 
 
-| Payment Method     | Advantages | Disadvantages |
-|--------------------|------------|---------------|
-| **Cash Payments**  | - Full privacy and anonymity<br>- Immediate settlement – no intermediaries<br>- No transaction fees for merchants<br>- Familiar and trusted by all age groups<br>- Works without electricity or network | - Manual handling and counting time<br>- Risk of theft or loss<br>- Difficult to split bills digitally<br>- No transaction traceability<br>- Lost sales when customers lack cash |
-| **Digital Payments** | - Fast and convenient for customers<br>- Easy bill splitting and online integration<br>- Reduced physical cash handling<br>- Better accounting and transparency<br>- Enables e-commerce and mobile payments | - Transaction fees for merchants<br>- Dependence on terminals and connectivity<br>- Data sharing and privacy concerns<br>- Technical failures can block payments<br>- Could be perceived as less “secure” |
-
-
-Cash Payments 
-Advantages 
--	Full privacy and anonymity 
--	Immediate settlement – no intermediaries 
--	No transaction fees for merchants 
--	Familiar and trusted by all age groups 
--	Works without electricity or network 
-
-Disadvantages
--	Manual handling and counting time 
--	Risk of theft or loss
--	Difficult to split bills digitally 
--	No transaction traceability 
--	Lost sales when customers lack cash 
-
-Digital Payments 
-Advantages 
--	Fast and convenient for customers 
--	Easy bill splitting and online integration 
--	Reduced physical cash handling 
--	Better accounting and transparency 
--	Enables e-commerce and mobile payments 
-
-Disadvantages 
--	Transaction fees for merchants
--	Dependence on terminals and connectivity 
--	Data sharing and privacy concerns 
--	Technical failures can block payments 
--	Could be perceived as less “secure” 
-
-These trade-offs explain why many German shops adopt hybrid solutions (accepting both cash and card), but imposing minimum card amounts. 
-
-Title: What doe Munich shop owners say? 
-Our interviews with 11 local businesses revealed: 
--	Most shops accept cash and card, but only above a minimum purchase threshold. 
--	Transaction fees are the main barrier to wider card acceptance.
--	Many customers simply buy extra items to reach the card minimum.
--	Some shops have removed limits, responding to younger customers’ preferences for card payments. 
-
-Overall, merchants describe the current system as “working fine”, reducing urgency to change.  
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <thead>
+    <tr style="background-color: #f2f4f7;">
+      <th style="border: 1px solid #d0d5dd; padding: 12px; text-align: left;">Payment Method</th>
+      <th style="border: 1px solid #d0d5dd; padding: 12px; text-align: left;">Advantages</th>
+      <th style="border: 1px solid #d0d5dd; padding: 12px; text-align: left;">Disadvantages</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>Cash Payments</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <ul style="margin: 0; padding-left: 18px;">
+          <li>Full privacy and anonymity</li>
+          <li>Immediate settlement – no intermediaries</li>
+          <li>No transaction fees for merchants</li>
+          <li>Familiar and trusted by all age groups</li>
+          <li>Works without electricity or network</li>
+        </ul>
+      </td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <ul style="margin: 0; padding-left: 18px;">
+          <li>Manual handling and counting time</li>
+          <li>Risk of theft or loss</li>
+          <li>Difficult to split bills digitally</li>
+          <li>No transaction traceability</li>
+          <li>Lost sales when customers lack cash</li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>Digital Payments</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <ul style="margin: 0; padding-left: 18px;">
+          <li>Fast and convenient for customers</li>
+          <li>Easy bill splitting and online integration</li>
+          <li>Reduced physical cash handling</li>
+          <li>Better accounting and transparency</li>
+          <li>Enables e-commerce and mobile payments</li>
+        </ul>
+      </td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">
+        <ul style="margin: 0; padding-left: 18px;">
+          <li>Transaction fees for merchants</li>
+          <li>Dependence on terminals and connectivity</li>
+          <li>Data sharing and privacy concerns</li>
+          <li>Technical failures can block payments</li>
+          <li>Could be perceived as less “secure”</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
