@@ -1,4 +1,4 @@
-use crate::utils::{extract_title, get_chapter_content, MarkdownContent};
+use crate::utils::{extract_title, get_chapter_content, MarkdownContent, MarkdownContent2};
 use leptos::prelude::*;
 
 /// Default Home Page
@@ -36,7 +36,7 @@ pub fn Home() -> impl IntoView {
                     <header class="header">
                         <div class="header-content">
                             <h1 class="header-title">{title}</h1>
-                            <MarkdownContent content=description/>
+                            <MarkdownContent2 content=description/>
                         </div>
                     </header>
                 }
@@ -45,67 +45,51 @@ pub fn Home() -> impl IntoView {
                 <div class="navbar-content">
                     <ul class="nav-list">
                         <li>
-                            <a href="#chapter-1" class="nav-link">
-                                "Introduction"
+                            <a href="/" class="nav-link">
+                                "Why SmartPay?"
                             </a>
                         </li>
                         <li>
-                            <a href="#chapter-2" class="nav-link">
-                                "Historical Context"
+                            <a href="/chapter-2" class="nav-link">
+                                "Current State"
                             </a>
                         </li>
                         <li>
-                            <a href="#chapter-3" class="nav-link">
-                                "Advantages of Cash"
+                            <a href="/chapter-3" class="nav-link">
+                                "Why Cash"
                             </a>
                         </li>
                         <li>
-                            <a href="#chapter-4" class="nav-link">
-                                "Advantages of Cards"
+                            <a href="/chapter-4" class="nav-link">
+                                "Pros and Cons"
                             </a>
                         </li>
                         <li>
-                            <a href="#chapter-5" class="nav-link">
-                                "Security"
+                            <a href="/chapter-5" class="nav-link">
+                                "Digital payment solutions"
                             </a>
                         </li>
                         <li>
-                            <a href="#chapter-6" class="nav-link">
-                                "Environment"
+                            <a href="/chapter-6" class="nav-link">
+                                "Policy Initiatives and Petitions"
                             </a>
                         </li>
                         <li>
-                            <a href="#chapter-7" class="nav-link">
-                                "Future"
+                            <a href="/chapter-7" class="nav-link">
+                                "Calculator"
                             </a>
                         </li>
                     </ul>
                 </div>
-            </nav> <main class="main-content">
-                <div class="chapters-container">
-                    <Chapter chapter_num=1/>
-                    <Chapter chapter_num=2/>
-                    <Chapter chapter_num=3/>
-                    <Chapter chapter_num=4/>
-                    <Chapter chapter_num=5/>
-                    <Chapter chapter_num=6/>
-                    <Chapter chapter_num=7/>
-                </div>
-            </main> <footer class="footer">
+            </nav>
+            <main class="main-content">
+                <article class="chapter-card" id="chapter-1">
+                    <MarkdownContent content=get_chapter_content(1).to_string()/>
+                </article>
+            </main>
+            <footer class="footer">
                 <p>"Explore the evolving world of payments"</p>
             </footer>
         </ErrorBoundary>
-    }
-}
-
-#[component]
-fn Chapter(chapter_num: i32) -> impl IntoView {
-    let content = get_chapter_content(chapter_num);
-    let chapter_id = format!("chapter-{}", chapter_num);
-
-    view! {
-        <article class="chapter-card" id=chapter_id>
-            <MarkdownContent content=content.to_string()/>
-        </article>
     }
 }

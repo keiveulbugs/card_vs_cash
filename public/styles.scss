@@ -32,45 +32,63 @@ body {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: var(--pastel-bg);
-  color: var(--text-dark);
+  color: var(--text-light);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Header Section */
+/* --- HEADER SECTION WITH PASTEL READABILITY --- */
 .header {
-  background: linear-gradient(135deg, rgba(255, 229, 236, 0.3) 0%, rgba(240, 229, 255, 0.3) 100%), url('/images/titlebackground.jpg') center/cover no-repeat;
-  padding: 5rem 2rem;
+  /* 1. Gradient Overlay: Using lighter overlay to make image more visible */
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 229, 236, 0.4) 100%),
+    url('/public/images/titlebackground.jpg') center/cover no-repeat;
+
+  padding: 3rem 2rem;
   text-align: center;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-content {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 850px;
+  /* 2. Frosted Glass Effect: Blurs the image details behind the text 
+        to stop the background from "fighting" the letters.
+  */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .header-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 0.5rem;
-  letter-spacing: -1px;
+  font-size: 3rem;
+  font-weight: 800;
+  /* Heavier weight is essential for readability on images */
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  letter-spacing: -1.5px;
+  /* 3. Subtle White Glow: Acts as a buffer for the dark text */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1);
 }
 
 .header-subtitle {
-  font-size: 1.3rem;
-  color: var(--text-light);
-  font-weight: 300;
-}
-
-/* Main Content */
-.main-content {
-  max-width: 1200px;
+  font-size: 1rem;
+  color: #070606;
+  /* Darker and bold for better readability */
+  font-weight: 550;
+  line-height: 1.6;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 4rem 2rem;
 }
 
+/* --- NAVBAR --- */
 .navbar {
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -111,22 +129,30 @@ body {
   background-color: rgba(127, 179, 213, 0.1);
 }
 
+/* --- MAIN CONTENT --- */
+.main-content {
+  padding: 0;
+}
+
 .chapters-container {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 0;
   margin-bottom: 4rem;
 }
 
 /* Chapter Card */
 .chapter-card {
   background-color: var(--pastel-cream);
-  border-radius: 16px;
-  padding: 3rem;
-  box-shadow: var(--shadow);
+  border-radius: 0;
+  padding: 3rem 2rem;
+  box-shadow: none;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: none;
   scroll-margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .chapter-card:nth-child(1) {
@@ -162,17 +188,11 @@ body {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* Markdown Content */
+/* Markdown Content Formatting */
 .markdown-content {
   word-wrap: break-word;
-}
-
-.markdown-content h1 {
-  font-size: 1.8rem;
-  color: var(--text-dark);
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .markdown-content h2 {
@@ -196,6 +216,34 @@ body {
   line-height: 1.8;
 }
 
+/* Image Wrappers with Alternating Layout */
+.image-wrapper {
+  margin: 1.5rem 0;
+  display: inline-block;
+  max-width: 40%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-left {
+  float: left;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.image-right {
+  float: right;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
 .markdown-content ul,
 .markdown-content ol {
   margin-left: 1.5rem;
@@ -208,7 +256,7 @@ body {
   list-style-position: outside;
 }
 
-/* Footer */
+/* --- FOOTER --- */
 .footer {
   background-color: rgba(0, 0, 0, 0.02);
   text-align: center;
@@ -224,79 +272,143 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Error Container */
-.error-container {
-  background-color: #ffe5e5;
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2rem;
-  border-left: 4px solid #ff6b6b;
-  color: #c92a2a;
-}
-
-.error-container h1 {
-  margin-bottom: 1rem;
-}
-
-.error-container ul {
-  text-align: left;
-  margin-left: 1.5rem;
-}
-
-/* Responsive Design */
+/* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
   .header-title {
-    font-size: 2.5rem;
-  }
-
-  .header-subtitle {
-    font-size: 1.1rem;
+    font-size: 2.8rem;
   }
 
   .header {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1rem;
   }
 
-  .main-content {
-    padding: 2rem 1rem;
-  }
-
-  .chapters-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .chapter-card {
-    padding: 2rem;
-  }
-
-  .markdown-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .markdown-content p {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-title {
-    font-size: 2rem;
-  }
-
-  .header-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .header {
-    padding: 2rem 1rem;
-  }
-
-  .chapter-card {
+  .header-content {
     padding: 1.5rem;
   }
 
-  .markdown-content h1 {
-    font-size: 1.3rem;
+  .image-wrapper {
+    max-width: 100%;
+    float: none;
+    margin: 1rem 0;
+    display: block;
   }
+}
+
+/* Container for the whole markdown area */
+.markdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  /* Space between sections */
+}
+
+/* The Row: A grid with two columns */
+.content-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Equal width split: 50% Image | 50% Text */
+  gap: 3rem;
+  align_items: center;
+  /* Vertically center text relative to image */
+}
+
+/* Image Column Styles */
+.content-row .image-col img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+/* Text Column Styles */
+.content-row .text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Left Alignment (Image Left, Text Right) */
+.content-row.image-left .image-col {
+  grid-column: 1;
+  /* Image in first column */
+  order: 1;
+}
+
+.content-row.image-left .text-col {
+  grid-column: 2;
+  /* Text in second column */
+  order: 2;
+}
+
+/* Right Alignment (Image Right, Text Left) */
+.content-row.image-right .image-col {
+  grid-column: 2;
+  /* Image in second column */
+  order: 2;
+}
+
+.content-row.image-right .text-col {
+  grid-column: 1;
+  /* Text in first column */
+  order: 1;
+}
+
+/* Special Case: Text Only (Intro text with no image) */
+.content-row.text-only {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Responsive: Stack them on mobile */
+@media (max-width: 768px) {
+  .content-row {
+    grid-template-columns: 1fr;
+    /* Single column */
+    gap: 1.5rem;
+  }
+
+  /* Reset order so image is always on top on mobile */
+  .content-row.image-left .image-col,
+  .content-row.image-right .image-col {
+    grid-column: 1;
+    order: 1;
+  }
+
+  .content-row.image-left .text-col,
+  .content-row.image-right .text-col {
+    grid-column: 1;
+    order: 2;
+  }
+}
+
+/* Centered Layout (Triggered by Strikethrough) */
+.content-row.center-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  /* Constrain width for readability */
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.content-row.center-row .image-col {
+  width: 100%;
+  max-width: 600px;
+  /* Don't let centered images get too massive */
+}
+
+.content-row.center-row .text-col {
+  width: 100%;
+}
+
+/* Hide the actual strikethrough tag if it's empty or just used as a marker */
+.center-row del {
+  text-decoration: none;
+  /* Optional: remove line if you only want the layout change */
+  color: inherit;
 }

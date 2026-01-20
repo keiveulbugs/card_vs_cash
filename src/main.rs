@@ -1,5 +1,5 @@
-use leptos::prelude::*;
 use cash_vs_card_2::App;
+use leptos::prelude::*;
 
 fn main() {
     // set up logging
@@ -7,8 +7,6 @@ fn main() {
     console_error_panic_hook::set_once();
 
     mount_to_body(|| {
-        view! {
-            <App />
-        }
+        view! { <App/> }
     })
 }

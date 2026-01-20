@@ -12,6 +12,7 @@ leptos_router = { version = "0.8" }
 console_log = "1"
 log = "0.4"
 console_error_panic_hook = "0.1"
+pulldown-cmark = "0.13.0"
 
 # utils
 # strum = { version = "0.25", features = ["derive", "strum_macros"] }
@@ -29,3 +30,7 @@ opt-level = 'z'
 lto = true
 codegen-units = 1
 panic = "abort"
+
+[package.metadata.leptos]
+# Ensure there is NO dot after localhost
+site-addr = "127.0.0.1:3000"
