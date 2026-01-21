@@ -66,3 +66,59 @@ Cryptocurrencies are decentralised digital currencies based on blockchain techno
 In Germany, cryptocurrencies are still mainly used for investment purposes, but some online platforms and selected businesses accept them as a payment method. Their adoption remains limited due to volatility and regulatory uncertainty.
 
 Stripe. (2025). Digital payment methods for German businesses. https://stripe.com/en-de/resources/more/digital-payment-methods-germany
+
+
+---
+# Schematic overview
+
+<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <thead>
+    <tr style="background-color: #f2f4f7;">
+      <th style="border: 1px solid #d0d5dd; padding: 12px; text-align: left;">Payment Method</th>
+      <th style="border: 1px solid #d0d5dd; padding: 12px; text-align: left;">Advantages</th>
+      <th style="border: 1px solid #d0d5dd; padding: 12px; text-align: left;">Disadvantages</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>Electronic bank transfers (SEPA / Instant / SWIFT)</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Secure and reliable; suitable for large or recurring payments</td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Slow or impractical for small, everyday retail transactions</td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>Credit & debit cards</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Widely accepted; convenient for customers; fast checkout</td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Transaction fees; delayed settlement for merchants</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>Contactless card payments</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Quick and easy for in-store payments; no PIN for small amounts</td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Payment limits; potential fraud risk if card is lost</td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>Mobile wallets & mobile payments</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">High convenience; no physical card needed; fast transactions</td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Requires compatible devices and digital infrastructure</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>QR code payments</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Low infrastructure costs; easy to use; flexible for small businesses</td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Less familiar to some users; depends on smartphone access</td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>Buy Now, Pay Later (BNPL)</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Increases purchasing power; boosts online sales</td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Risk of overspending; delayed payments for merchants</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>Peer-to-peer (P2P) payments</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Instant transfers; low fees; simple user experience</td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Limited acceptance in traditional retail</td>
+    </tr>
+    <tr style="background-color: #fafafa;">
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;"><strong>Cryptocurrencies</strong></td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">Decentralised; no intermediaries; global reach</td>
+      <td style="border: 1px solid #d0d5dd; padding: 12px; vertical-align: top;">High volatility; low acceptance; regulatory uncertainty</td>
+    </tr>
+  </tbody>
+</table>

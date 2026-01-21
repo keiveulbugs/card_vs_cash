@@ -61,22 +61,23 @@ pub fn Home() -> impl IntoView {
                         </li>
                         <li>
                             <a href="/chapter-4" class="nav-link">
-                                "Pros and Cons"
+                                "Digital Payment Solutions"
                             </a>
                         </li>
+
                         <li>
                             <a href="/chapter-5" class="nav-link">
-                                "Digital payment solutions"
+                                "Policy Initiatives"
                             </a>
                         </li>
                         <li>
                             <a href="/chapter-6" class="nav-link">
-                                "Policy Initiatives and Petitions"
+                                "Calculator"
                             </a>
                         </li>
                         <li>
                             <a href="/chapter-7" class="nav-link">
-                                "Calculator"
+                                "Who are we?"
                             </a>
                         </li>
                     </ul>

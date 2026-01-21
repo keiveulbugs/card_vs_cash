@@ -1,4 +1,6 @@
+use crate::components::Calculator;
 use crate::utils::{extract_title, get_chapter_content, MarkdownContent};
+use leptos::either;
 use leptos::prelude::*;
 
 /// Chapter Page Component - used for all chapters except the home page
@@ -29,7 +31,15 @@ pub fn ChapterPage(chapter_num: i32) -> impl IntoView {
 
             <main class="main-content">
                 <article class="chapter-card" id=format!("chapter-{}", chapter_num)>
-                    <MarkdownContent content=content.to_string()/>
+
+                    {if chapter_num == 6 {
+                        either::Either::Left(view! { <Calculator/> })
+                    } else {
+                        either::Either::Right(
+                            view! { <MarkdownContent content=content.to_string()/> },
+                        )
+                    }}
+
                 </article>
             </main>
 
@@ -58,27 +68,28 @@ fn Navbar() -> impl IntoView {
                     </li>
                     <li>
                         <a href="/chapter-3" class="nav-link">
-                            "Why Cash"
+                            "Misconceptions"
                         </a>
                     </li>
                     <li>
                         <a href="/chapter-4" class="nav-link">
-                            "Pros and Cons"
+                            "Digital Payment Solutions"
                         </a>
                     </li>
+
                     <li>
                         <a href="/chapter-5" class="nav-link">
-                            "Digital payment solutions"
+                            "Policy Initiatives"
                         </a>
                     </li>
                     <li>
                         <a href="/chapter-6" class="nav-link">
-                            "Policy Initiatives and Petitions"
+                            "Calculator"
                         </a>
                     </li>
                     <li>
                         <a href="/chapter-7" class="nav-link">
-                            "Calculator"
+                            "Who are we?"
                         </a>
                     </li>
                 </ul>
