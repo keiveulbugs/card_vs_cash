@@ -43,9 +43,6 @@ At the same time, digital payments are increasing steadily:
  
 
 
-
-Source: ECB, Study on. The Payment Attitudes of Consumers in the Euro Area (SPACE), 2024
-
 Overall trend:
 Digital payment infrastructure exists and is growing, but cash remains deeply embedded in daily German payment culture. 
 

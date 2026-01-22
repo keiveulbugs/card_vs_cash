@@ -6,3 +6,9 @@ SmartPay helps you to understand payment options in Germany and the real costs b
 <br/>
 
 *This website was developed by students from the Technical University of Munich (TUM).*
+<br/>
+
+<p class = image-caption>
+freepick.com
+</p>
+ 

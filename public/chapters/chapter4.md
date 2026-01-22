@@ -6,7 +6,7 @@
 
 ### What are the main types of digital payments?
 
-![](/card_vs_cash/public/images/Chapter4_1.jpeg)
+![istockphoto.com](/card_vs_cash/public/images/Chapter4_1.jpeg)
 ## Electronic bank transfers
 Digital bank transfers are one of the most established forms of digital payments and are widely used in Germany, especially for invoices, rent, and larger transactions.
 <br><br>
@@ -23,7 +23,7 @@ These methods are considered reliable and secure, but they are less practical fo
 Source: Stripe. (2025). Digital payment methods for German businesses. https://stripe.com/en-de/resources/more/digital-payment-methods-germany   
 </p>
 
-![](/card_vs_cash/public/images/Chapter4_2.jpeg)
+![freepik.com](/card_vs_cash/public/images/Chapter4_2.jpeg)
 ## Credit and debit card payments
 Credit and debit cards are among the most widely used digital payment methods worldwide and have overtaken cash in many contexts.
 <br> <br>
@@ -39,7 +39,7 @@ Card payments are fast and convenient for customers, but for merchants they invo
 Source: Dopson, E. (2024). What Are Digital Payments? Types + Examples. Shopify. https://www.shopify.com/blog/digital-payments 
 </p>
 
-![](/card_vs_cash/public/images/Chapter4_3.png)
+![bancontact.com](/card_vs_cash/public/images/Chapter4_3.png)
 ## Contactless card payments
 Contactless payments work similarly to traditional card payments but rely on near-field communication (NFC) technology. Customers simply tap their card or device on a payment terminal.
 This method is particularly convenient for in-store payments, although it usually comes with transaction limits and potential security risks if a card is lost or stolen.
@@ -49,7 +49,7 @@ This method is particularly convenient for in-store payments, although it usuall
 Source: Dopson, E. (2024). What Are Digital Payments? Types + Examples. Shopify. https://www.shopify.com/blog/digital-payments
 </p>
 
-![](/card_vs_cash/public/images/Chapter4_4.png)
+![istockphoto.com/](/card_vs_cash/public/images/Chapter4_4.png)
 ## Mobile wallets and mobile payments
 Mobile payments allow users to pay using smartphones, smartwatches, or other smart devices. Digital wallets such as Apple Pay or Samsung Wallet store virtual versions of credit or debit cards and use NFC or QR codes to complete transactions.
 Mobile payments also enable quick peer-to-peer transfers and are increasingly accepted by online and physical retailers due to their convenience and speed.
@@ -59,7 +59,7 @@ Mobile payments also enable quick peer-to-peer transfers and are increasingly ac
 Source: Santander. (2022). Digital payment methods: What are they and which ones are most common? https://www.santander.com/en/stories/digital-payment-methods-what-are-they-and-which-ones-are-most-common 
 </p>
 
-![](/card_vs_cash/public/images/Chapter4_5.jpg)
+![wise.com](/card_vs_cash/public/images/Chapter4_5.jpg)
 ## QR code payments
 QR code payments allow customers to scan a merchant’s QR code using a banking or payment app, select a payment method, and confirm the transaction digitally.
 This method is fast, user-friendly, and does not require physical payment terminals, making it attractive for small businesses and temporary retail settings.
@@ -69,7 +69,7 @@ This method is fast, user-friendly, and does not require physical payment termin
 Source: Santander. (2022). Digital payment methods: What are they and which ones are most common? https://www.santander.com/en/stories/digital-payment-methods-what-are-they-and-which-ones-are-most-common
 </p>
 
-![](/card_vs_cash/public/images/Chapter4_6.png)
+![shutterstock.com](/card_vs_cash/public/images/Chapter4_6.png)
 ## Buy Now, Pay Later (BNPL) services
 BNPL services enable customers to receive goods immediately while postponing payment or splitting it into instalments, often without interest for a limited period.
 These services are especially popular in e-commerce, as they can increase purchasing power and conversion rates, although they may also encourage overspending.
@@ -79,7 +79,7 @@ These services are especially popular in e-commerce, as they can increase purcha
 Source: Stripe. (2025). Digital payment methods for German businesses. https://stripe.com/en-de/resources/more/digital-payment-methods-germany 
 </p>
 
-![](/card_vs_cash/public/images/Chapter4_7.png)
+![freepik.com](/card_vs_cash/public/images/Chapter4_7.png)
 ## Peer-to-peer (P2P) payments
 Peer-to-peer payments allow individuals to send money to each other digitally through apps linked to bank accounts or cards.
 Although primarily used for private transactions, some P2P services are increasingly accepted by small businesses and online merchants.
@@ -89,7 +89,7 @@ Although primarily used for private transactions, some P2P services are increasi
 Source: Dopson, E. (2024). What Are Digital Payments? Types + Examples. Shopify. https://www.shopify.com/blog/digital-payments 
 </p>
 
-![](/card_vs_cash/public/images/Chapter4_8.jpeg)
+![binance.com](/card_vs_cash/public/images/Chapter4_8.jpeg)
 ## Cryptocurrencies
 Cryptocurrencies are decentralised digital currencies based on blockchain technology, such as Bitcoin or Ethereum. They are not issued by central banks and operate through distributed networks.
 In Germany, cryptocurrencies are still mainly used for investment purposes, but some online platforms and selected businesses accept them as a payment method. Their adoption remains limited due to volatility and regulatory uncertainty.
