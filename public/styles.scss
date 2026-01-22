@@ -24,17 +24,15 @@
 }
 
 html,
-body {
-  width: 100%;
-  height: 100%;
-}
+
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: var(--pastel-bg);
   color: var(--text-light);
   line-height: 1.6;
-  overflow-x: hidden;
+  min-width: 1200px;
+  overflow-x: auto;
 }
 
 /* --- HEADER SECTION WITH PASTEL READABILITY --- */
@@ -55,7 +53,9 @@ body {
 }
 
 .header-content {
-  max-width: 850px;
+  max-width: 1280px;
+  max-width: 1200px;
+  margin: 0 auto;
   /* 2. Frosted Glass Effect: Blurs the image details behind the text 
         to stop the background from "fighting" the letters.
   */
@@ -308,7 +308,7 @@ body {
   grid-template-columns: 1fr 1fr;
   /* Equal width split: 50% Image | 50% Text */
   gap: 3rem;
-  align_items: center;
+  align-items: center;
   /* Vertically center text relative to image */
 }
 
