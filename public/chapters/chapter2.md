@@ -3,7 +3,7 @@
 # Current State
 ## Cash remains dominant, but digital is growing
 
-![Source: Deutsche Bundesbank, 2023, "Payment behaviour in Germany in 2023", accessed [13/01/2026] - https://www.bundesbank.de/en/publications/reports/studies/payment-behaviour-in-germany-in-2023-934896](/images/Chapter2piechart.png)
+![Source: Deutsche Bundesbank, 2023, "Payment behaviour in Germany in 2023", accessed [13/01/2026] - https://www.bundesbank.de/en/publications/reports/studies/payment-behaviour-in-germany-in-2023-934896](/card_vs_cash/images/Chapter2piechart.png)
 Germany is one of the most technologically advanced economies in Europe, yet cash remains the most frequent used payment method in everyday life. 
 
 
