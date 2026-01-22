@@ -29,7 +29,7 @@ pub fn App() -> impl IntoView {
 
         <Router base="/card_vs_cash">
             <Routes fallback=|| view! { NotFound }>
-                <Route path=path!("/") view=Home/>
+                <Route path=path!("/home") view=Home/>
                 <Route path=path!("/chapter-2") view=|| view! { <ChapterPage chapter_num=2/> }/>
                 <Route path=path!("/chapter-3") view=|| view! { <ChapterPage chapter_num=3/> }/>
                 <Route path=path!("/chapter-4") view=|| view! { <ChapterPage chapter_num=4/> }/>

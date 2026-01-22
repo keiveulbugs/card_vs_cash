@@ -66,38 +66,38 @@ fn Navbar() -> impl IntoView {
             <div class="navbar-content">
                 <ul class="nav-list">
                     <li>
-                        <a href="/" class="nav-link">
+                        <a href="/card_vs_cash/home" class="nav-link">
                             "Why SmartPay?"
                         </a>
                     </li>
                     <li>
-                        <a href="./chapter-2" class="nav-link">
+                        <a href="/card_vs_cash/chapter-2" class="nav-link">
                             "Current State"
                         </a>
                     </li>
                     <li>
-                        <a href="./chapter-3" class="nav-link">
+                        <a href="/card_vs_cash/chapter-3" class="nav-link">
                             "Misconceptions"
                         </a>
                     </li>
                     <li>
-                        <a href="./chapter-4" class="nav-link">
+                        <a href="/card_vs_cash/chapter-4" class="nav-link">
                             "Digital Payment Solutions"
                         </a>
                     </li>
 
                     <li>
-                        <a href="./chapter-5" class="nav-link">
+                        <a href="/card_vs_cash/chapter-5" class="nav-link">
                             "Policy Initiatives"
                         </a>
                     </li>
                     <li>
-                        <a href="./chapter-6" class="nav-link">
+                        <a href="/card_vs_cash/chapter-6" class="nav-link">
                             "PoS Calculator"
                         </a>
                     </li>
                     <li>
-                        <a href="./chapter-7" class="nav-link">
+                        <a href="/card_vs_cash/chapter-7" class="nav-link">
                             "Who are we?"
                         </a>
                     </li>
