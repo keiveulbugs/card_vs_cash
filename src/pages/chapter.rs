@@ -71,33 +71,33 @@ fn Navbar() -> impl IntoView {
                         </a>
                     </li>
                     <li>
-                        <a href="/chapter-2" class="nav-link">
+                        <a href="./chapter-2" class="nav-link">
                             "Current State"
                         </a>
                     </li>
                     <li>
-                        <a href="/chapter-3" class="nav-link">
+                        <a href="./chapter-3" class="nav-link">
                             "Misconceptions"
                         </a>
                     </li>
                     <li>
-                        <a href="/chapter-4" class="nav-link">
+                        <a href="./chapter-4" class="nav-link">
                             "Digital Payment Solutions"
                         </a>
                     </li>
 
                     <li>
-                        <a href="/chapter-5" class="nav-link">
+                        <a href="./chapter-5" class="nav-link">
                             "Policy Initiatives"
                         </a>
                     </li>
                     <li>
-                        <a href="/chapter-6" class="nav-link">
+                        <a href="./chapter-6" class="nav-link">
                             "PoS Calculator"
                         </a>
                     </li>
                     <li>
-                        <a href="/chapter-7" class="nav-link">
+                        <a href="./chapter-7" class="nav-link">
                             "Who are we?"
                         </a>
                     </li>
