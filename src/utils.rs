@@ -89,77 +89,111 @@ pub fn MarkdownContent(#[prop(into)] content: String) -> impl IntoView {
 
     let mut final_html_parts = Vec::new();
     let mut current_text_events = Vec::new();
-    let mut current_image_event: Option<(CowStr, CowStr, CowStr)> = None;
+    // Added a 4th field to the tuple for the description (alt text)
+    let mut current_image_event: Option<(CowStr, CowStr, CowStr, String)> = None;
     let mut is_centered = false;
     let mut image_count = 0;
 
-    let mut flush_section =
-        |image_data: Option<(CowStr, CowStr, CowStr)>, text_events: Vec<Event>, centered: bool| {
-            let mut text_html = String::new();
-            html::push_html(&mut text_html, text_events.into_iter());
+    // Trackers for image description parsing
+    let mut is_collecting_alt = false;
+    let mut current_alt_text = String::new();
 
-            // Skip flushing if there is absolutely no content
-            if text_html.trim().is_empty() && image_data.is_none() {
-                return;
-            }
+    let mut flush_section = |image_data: Option<(CowStr, CowStr, CowStr, String)>,
+                             text_events: Vec<Event>,
+                             centered: bool| {
+        let mut text_html = String::new();
+        html::push_html(&mut text_html, text_events.into_iter());
 
-            let align_class = if centered {
-                "center-row"
-            } else if image_count % 2 == 0 {
-                "image-left"
-            } else {
-                "image-right"
-            };
+        if text_html.trim().is_empty() && image_data.is_none() {
+            return;
+        }
 
-            let img_html = if let Some((dest, title, _)) = image_data {
-                let fixed_dest = fix_image_path(&dest);
-                format!(
-                    r#"<div class="image-col"><img src="{}" title="{}" alt="" /></div>"#,
-                    fixed_dest, title
-                )
+        let align_class = if centered {
+            "center-row"
+        } else if image_count % 2 == 0 {
+            "image-left"
+        } else {
+            "image-right"
+        };
+
+        // Capture the image and append the italicized description below it
+        let img_html = if let Some((dest, title, _, alt)) = image_data {
+            let fixed_dest = fix_image_path(&dest);
+
+            // If description exists, create the italicized text block
+            let description_html = if !alt.is_empty() {
+                format!(r#"<p class="image-caption"><i>{}</i></p>"#, alt)
             } else {
                 String::new()
             };
 
-            let section = format!(
-                r#"<section class="content-row {}">
+            format!(
+                r#"<div class="image-col"><img src="{}" title="{}" alt="{}" />{}</div>"#,
+                fixed_dest, title, alt, description_html
+            )
+        } else {
+            String::new()
+        };
+
+        let section = format!(
+            r#"<section class="content-row {}">
                 {}
                 <div class="text-col">{}</div>
                </section>"#,
-                align_class, img_html, text_html
-            );
+            align_class, img_html, text_html
+        );
 
-            final_html_parts.push(section);
+        final_html_parts.push(section);
 
-            // Only increment the alternating counter if we aren't in a centered block
-            if !centered && !img_html.is_empty() {
-                image_count += 1;
-            }
-        };
+        if !centered && !img_html.is_empty() {
+            image_count += 1;
+        }
+    };
 
     for event in parser {
+        if is_collecting_alt {
+            match event {
+                Event::Text(t) => {
+                    current_alt_text.push_str(&t);
+                    continue; // Keep collecting until End tag
+                }
+                Event::End(TagEnd::Image) => {
+                    is_collecting_alt = false;
+                    // Now that we have the full alt text, update the current_image_event
+                    if let Some(mut img) = current_image_event.take() {
+                        img.3 = current_alt_text.clone();
+                        current_image_event = Some(img);
+                    }
+                    continue;
+                }
+                _ => {} // Handle other nested tags if necessary
+            }
+        }
+
         match event {
-            // TRIGGER: The Horizontal Rule (---) toggles centering ON
             Event::Rule => {
                 flush_section(current_image_event.take(), current_text_events, is_centered);
                 current_text_events = Vec::new();
                 is_centered = true;
             }
 
-            // RESET: A New Image toggles centering OFF (returns to side-by-side)
             Event::Start(Tag::Image {
                 dest_url,
                 title,
                 id,
                 ..
             }) => {
+                // Flush existing content before starting a new image section
                 flush_section(current_image_event.take(), current_text_events, is_centered);
                 current_text_events = Vec::new();
                 is_centered = false;
-                current_image_event = Some((dest_url, title, id));
+
+                // Initialize the image event with empty alt text, then start collecting
+                current_image_event = Some((dest_url, title, id, String::new()));
+                current_alt_text = String::new();
+                is_collecting_alt = true;
             }
 
-            // Capture everything else
             _ => {
                 current_text_events.push(event);
             }
@@ -171,6 +205,7 @@ pub fn MarkdownContent(#[prop(into)] content: String) -> impl IntoView {
 
     view! { <div class="markdown-container" inner_html=final_html></div> }
 }
+
 fn fix_image_path(path: &str) -> String {
     let path_str = path.to_string();
     if path_str.starts_with("../") {

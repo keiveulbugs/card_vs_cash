@@ -30,7 +30,7 @@ pub fn ChapterPage(chapter_num: i32) -> impl IntoView {
             <Navbar/>
 
             <main class="main-content">
-                <article class="chapter-card" id=format!("chapter-{}", chapter_num)>
+                <article class:chapter-card=chapter_num != 6 id=format!("chapter-{}", chapter_num)>
 
                     {if chapter_num == 6 {
                         either::Either::Left(view! { <Calculator/> })
