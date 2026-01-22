@@ -33,10 +33,19 @@ pub fn ChapterPage(chapter_num: i32) -> impl IntoView {
                 <article class:chapter-card=chapter_num != 6 id=format!("chapter-{}", chapter_num)>
 
                     {if chapter_num == 6 {
-                        either::Either::Left(view! { <Calculator/> })
+                        either::Either::Left(
+                            view! {
+                                <MarkdownContent content=content.to_string()/>
+                                <Calculator/>
+                            },
+                        )
                     } else {
                         either::Either::Right(
-                            view! { <MarkdownContent content=content.to_string()/> },
+                            view! {
+                                // <MarkdownContent content=content.to_string()/>
+
+                                <MarkdownContent content=content.to_string()/>
+                            },
                         )
                     }}
 
@@ -84,7 +93,7 @@ fn Navbar() -> impl IntoView {
                     </li>
                     <li>
                         <a href="/chapter-6" class="nav-link">
-                            "Calculator"
+                            "PoS Calculator"
                         </a>
                     </li>
                     <li>

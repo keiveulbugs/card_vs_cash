@@ -72,7 +72,7 @@ pub fn Home() -> impl IntoView {
                         </li>
                         <li>
                             <a href="/chapter-6" class="nav-link">
-                                "Calculator"
+                                "PoS Calculator"
                             </a>
                         </li>
                         <li>
