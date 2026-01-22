@@ -1,4 +1,4 @@
-use cash_vs_card_2::App;
+use card_vs_cash::App;
 use leptos::prelude::*;
 
 fn main() {

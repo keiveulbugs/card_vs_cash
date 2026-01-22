@@ -1,4 +1,5 @@
 [build]
+#public_url = "/card_vs_cash/"
 # The index HTML file to drive the bundling process.
 target = "index.html"
 # Build in release mode.
