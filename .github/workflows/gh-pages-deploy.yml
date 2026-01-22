@@ -33,7 +33,6 @@ jobs:
       
       - name: Build
         run: trunk build --release --public-url /card_vs_cash/
-      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
