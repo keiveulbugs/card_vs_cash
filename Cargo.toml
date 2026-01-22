@@ -1,5 +1,5 @@
 [package]
-name = "cash_vs_card_2"
+name = "card_vs_cash"
 version = "0.1.0"
 edition = "2024"
 
