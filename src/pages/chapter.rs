@@ -93,7 +93,7 @@ fn Navbar() -> impl IntoView {
                     </li>
                     <li>
                         <a href="/card_vs_cash/chapter-6" class="nav-link">
-                            "Costs Calculator"
+                            "Cost Calculator"
                         </a>
                     </li>
                     <li>
