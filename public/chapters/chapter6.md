@@ -1,6 +1,6 @@
 
 ---
-# Point-of-Sale Calculator and comparison
+# Cost Calculator and comparison
 ### It can be hard to decide which Point-of-Sale payment operator to choose. They have different benefits, and different subscription models. To help you out with this decision, we made an easy to use calculator to compare the major payment operators with each other, and using cash only.
 
 <br><br>
