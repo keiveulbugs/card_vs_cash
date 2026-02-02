@@ -110,7 +110,7 @@
     <h3>What Can Policymakers Do?</h3>
     <p>
       Germany’s reliance on cash reflects cultural norms, trust considerations, and daily payment habits.
-      At the same time, digital and contactless payments are increasing—especially among younger users and
+      At the same time, digital and contactless payments are increasing, especially among younger users and
       in urban areas.
     </p>
     <p>
@@ -144,7 +144,7 @@
     <p>
       QR-code payments and account-to-account transfers reduce infrastructure requirements
       and ongoing fees. Initiatives like the European Payments Initiative (EPI) support
-      pan-European solutions.
+      European solutions.
     </p>
     <ul>
       <li>Lower merchant costs</li>
